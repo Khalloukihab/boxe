@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lexend:wght@400;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Lexend", sans-serif;
+
+  --color-primary: #ff562b;
+  --color-on-primary: #550e00;
+  --color-primary-container: #ff562b;
+  --color-on-primary-container: #ffffff;
+  
+  --color-background: #131313;
+  --color-surface: #1c1b1b;
+  --color-surface-elevated: #2a2a2a;
+  --color-on-background: #e5e2e1;
+  --color-on-surface: #e5e2e1;
+  --color-secondary: #c6c6c7;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline uppercase tracking-tighter;
+  }
+}
+
+@layer components {
+  .brutal-border {
+    @apply border-4 border-on-background;
+  }
+  
+  .brutal-border-primary {
+    @apply border-4 border-primary;
+  }
+
+  .hard-shadow {
+    box-shadow: 8px 8px 0px 0px #ff562b;
+  }
+  
+  .hard-shadow-white {
+    box-shadow: 6px 6px 0px 0px #e5e2e1;
+  }
+
+  .nav-link {
+    @apply font-headline text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-background font-headline font-black px-8 py-4 uppercase border-4 border-on-background active:translate-x-1 active:translate-y-1 active:shadow-none transition-all;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-on-background font-headline font-black px-8 py-4 uppercase border-4 border-on-background hover:bg-on-background hover:text-background transition-all;
+  }
+}
